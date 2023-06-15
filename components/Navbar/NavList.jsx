@@ -1,23 +1,6 @@
 import Image from "next/image";
-import NavItems from "./NavItems";
+import NavItem from "./NavItem";
 const NavList = (props) => {
-    const navItems = [
-        {
-            name: "Overview"
-        },
-        {
-            name: "Overview"
-        },
-        {
-            name: "Overview"
-        },
-        {
-            name: "Overview"
-        },
-        {
-            name: "Overview"
-        }
-    ]
     return (
         <div className="border-b-[1px] border-[#E9EBF0] py-8">
             <div className="mb-7 flex items-center justify-between">
@@ -26,8 +9,8 @@ const NavList = (props) => {
             </div>
             <div className="flex flex-col gap-5 mb-">
                 {
-                    navItems.map((item, index) => (
-                        <NavItems key={index} name={item.name} />
+                    props.list.map((item, index) => (
+                        <NavItem key={index} name={item.name} count={item.count} icon={item.icon}/>
                     ))
                 }
             </div>
